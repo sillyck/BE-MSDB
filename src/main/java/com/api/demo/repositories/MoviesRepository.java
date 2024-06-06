@@ -1,11 +1,14 @@
 package com.api.demo.repositories;
 
+import java.util.ArrayList;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.api.demo.models.MoviesModel;
+import com.api.demo.models.Movies;
 
 @Repository
-public interface MoviesRepository extends CrudRepository<MoviesModel, Long> {
-
+public interface MoviesRepository extends CrudRepository<Movies, Long> {
+	public abstract ArrayList<Movies> findByGenre(String genre);
+	
 }
