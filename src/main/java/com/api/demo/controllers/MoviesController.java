@@ -60,4 +60,11 @@ public class MoviesController {
 		}
 	}
 	
+	//localhost:8080/movies/valoration=9.3
+	@GetMapping(path="/valoration={valoration}")
+	public ArrayList<Movies> getMoviesByValoration(@PathVariable("valoration") float valoration){
+	    return moviesService.getMoviesValoration(valoration);
+	}
+
+	
 }

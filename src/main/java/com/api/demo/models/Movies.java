@@ -18,6 +18,7 @@ public class Movies {
 	private Date release_date;
 	private int duration;
 	private String synopsis;
+	private float valoration;
 
 	public long getId() {
 		return id;
@@ -75,4 +76,12 @@ public class Movies {
 		this.synopsis = synopsis;
 	}
 
+	public float getValoration() {
+		return valoration;
+	}
+
+	public void setValoration(float valoration) {
+		this.valoration = valoration;
+	}
+	
 }

@@ -43,4 +43,9 @@ public class MoviesService {
 			return false;
 		}
 	}
+	
+	public ArrayList<Movies> getMoviesValoration(float valoration){
+		return moviesRepository.findByValoration(valoration);
+	}
+	
 }
