@@ -8,8 +8,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "movies")
 public class Movies {
@@ -18,25 +26,13 @@ public class Movies {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
-
-    @Getter
+	
+	@Column(nullable=false)
     private String title;
-
-    @Getter
     private String director;
-
-    @Getter
     private String genre;
-
-    @Getter
     private Date release_date;
-
-    @Getter
     private int duration;
-
-    @Getter
     private String synopsis;
-
-    @Getter
     private float valoration;
 }
