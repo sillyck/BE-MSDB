@@ -2,86 +2,41 @@ package com.api.demo.models;
 
 import java.sql.Date;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Getter;
 
 @Entity
 @Table(name = "movies")
 public class Movies {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Long id;
-	private String title;
-	private String director;
-	private String genre;
-	private Date release_date;
-	private int duration;
-	private String synopsis;
-	private float valoration;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
+    private Long id;
 
-	public long getId() {
-		return id;
-	}
+    @Getter
+    private String title;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    @Getter
+    private String director;
 
-	public String getTitle() {
-		return title;
-	}
+    @Getter
+    private String genre;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    @Getter
+    private Date release_date;
 
-	public String getDirector() {
-		return director;
-	}
+    @Getter
+    private int duration;
 
-	public void setDirector(String director) {
-		this.director = director;
-	}
+    @Getter
+    private String synopsis;
 
-	public String getGenre() {
-		return genre;
-	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-
-	public Date getRelease_date() {
-		return release_date;
-	}
-
-	public void setRelease_date(Date release_date) {
-		this.release_date = release_date;
-	}
-
-	public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-
-	public String getSynopsis() {
-		return synopsis;
-	}
-
-	public void setSynopsis(String synopsis) {
-		this.synopsis = synopsis;
-	}
-
-	public float getValoration() {
-		return valoration;
-	}
-
-	public void setValoration(float valoration) {
-		this.valoration = valoration;
-	}
-	
+    @Getter
+    private float valoration;
 }
