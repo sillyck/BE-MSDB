@@ -49,6 +49,12 @@ public class MoviesController {
 		return moviesService.getMovieByGenre(genre);
 	}
 	
+	//localhost:8080/movies/valoration/9.3
+	@GetMapping(path="/valoration/{valoration}")
+    public ArrayList<Movies> getMoviesByValoration(@PathVariable("valoration") float valoration){
+        return moviesService.getMoviesValoration(valoration);
+    }
+	
 	//localhost:8080/movies/1
 	@DeleteMapping(path="/{id}")
 	public String deleteMoviesId(@PathVariable("id") Long id) {
@@ -59,12 +65,5 @@ public class MoviesController {
 			return "Could not delete the movie with the id:" + id;
 		}
 	}
-	
-	//localhost:8080/movies/valoration=9.3
-	@GetMapping(path="/valoration={valoration}")
-	public ArrayList<Movies> getMoviesByValoration(@PathVariable("valoration") float valoration){
-	    return moviesService.getMoviesValoration(valoration);
-	}
-
 	
 }

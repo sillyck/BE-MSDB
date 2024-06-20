@@ -44,8 +44,8 @@ public class MoviesService {
 		}
 	}
 	
-	public ArrayList<Movies> getMoviesValoration(float valoration){
-		return moviesRepository.findByValoration(valoration);
+	public ArrayList<Movies> getMoviesValoration(float valoration) {
+	    return moviesRepository.findByValoration(valoration);
 	}
 	
 }
