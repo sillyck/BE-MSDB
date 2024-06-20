@@ -12,6 +12,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
@@ -31,14 +32,17 @@ public class User implements UserDetails{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-    @GeneratedValue
-    Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+	
 	@Column(nullable = false)
-	String username;
-	String password;
-	String firstname;
-	String lastname;
-	String country;
+	private String username;
+	
+	private String password;
+	private String firstname;
+	private String lastname;
+	private String country;
+	
 	@Enumerated(EnumType.STRING)
 	Role rol;
 	
