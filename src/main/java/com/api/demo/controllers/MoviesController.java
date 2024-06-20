@@ -55,6 +55,12 @@ public class MoviesController {
         return moviesService.getMoviesValoration(valoration);
     }
 	
+	//localhost:8080/movies/valoration?min=7.0&max=9.5
+	@GetMapping(path="/valoration")
+    public ArrayList<Movies> getMoviesByValorationBetween(@RequestParam("min") float minValoration, @RequestParam("max") float maxValoration){
+        return moviesService.getMoviesValorationBetween(minValoration, maxValoration);
+    }
+	
 	//localhost:8080/movies/1
 	@DeleteMapping(path="/{id}")
 	public String deleteMoviesId(@PathVariable("id") Long id) {

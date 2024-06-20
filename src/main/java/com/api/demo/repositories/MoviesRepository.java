@@ -11,5 +11,6 @@ import com.api.demo.models.Movies;
 public interface MoviesRepository extends CrudRepository<Movies, Long> {
 	public abstract ArrayList<Movies> findByGenre(String genre);
 	public abstract ArrayList<Movies> findByValoration(float valoration);
+	public abstract ArrayList<Movies> findMoviesByValorationBetween(float min, float max);
 	
 }

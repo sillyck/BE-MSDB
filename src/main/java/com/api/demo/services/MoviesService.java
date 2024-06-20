@@ -44,8 +44,14 @@ public class MoviesService {
 		}
 	}
 	
+	//Obtenim totes les pel·lícules amb aquesta valoracio
 	public ArrayList<Movies> getMoviesValoration(float valoration) {
 	    return moviesRepository.findByValoration(valoration);
+	}
+	
+	//Obtenim totes les pel·lícules entre aquest rang de valoracions
+	public ArrayList<Movies> getMoviesValorationBetween(float min, float max) {
+	    return moviesRepository.findMoviesByValorationBetween(min, max);
 	}
 	
 }
